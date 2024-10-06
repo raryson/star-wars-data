@@ -5,7 +5,13 @@ export default function Radio(props: IRadioProps) {
     <RadioContainer>
       {props.elements.map((element, index) => (
         <RadioGroup>
-          <RadioStyled type="radio" id={String(index)} value={element} name={props.name} />
+          <RadioStyled
+            type="radio"
+            id={String(index)}
+            value={element}
+            name={props.name}
+            key={index}
+          />
           <RadioLabel htmlFor={element}>{element}</RadioLabel>
         </RadioGroup>
       ))}
