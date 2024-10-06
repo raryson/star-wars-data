@@ -1,14 +1,15 @@
 import styled from 'styled-components';
+import { BrandColor } from '../../styled-components/GlobalStyles';
 
 const InputStyled = styled.input`
   padding: 30px;
   border-radius: 4px;
-  box-shadow: 0 1px 2px 0 #ffffff;
-  border: solid 1px #dadada;
+  box-shadow: 0 1px 2px 0 ${BrandColor.WHITE};
+  border: solid 1px ${BrandColor.GAINSBORO};
   background-color: #fff;
-  color: #383838;
+  color: ${BrandColor.GRAY22};
   &:focus {
-    border: solid 1px #383838;
+    border: solid 1px ${BrandColor.GRAY22};
     outline: none !important;
   }
 `;
