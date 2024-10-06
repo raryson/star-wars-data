@@ -7,6 +7,7 @@ const ButtonStyled = styled.button<{ $disabled?: boolean }>`
   border-radius: 20px;
   margin: 20px 0 0;
   padding: 8px 144px 8px 145px;
+  text-transform: uppercase;
 
   ${(props) =>
     props.$disabled &&
