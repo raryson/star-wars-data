@@ -3,8 +3,7 @@ import { ButtonStyled } from './styled';
 export default function Button(props: IButtonProps) {
   return (
     <div>
-      <ButtonStyled>{props.children}</ButtonStyled>
-      <ButtonStyled $disabled>{props.children}</ButtonStyled>
+      <ButtonStyled $disabled={props.disabled}>{props.children}</ButtonStyled>
     </div>
   );
 }
