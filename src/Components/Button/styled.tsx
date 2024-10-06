@@ -6,8 +6,9 @@ const ButtonStyled = styled.button<{ $disabled?: boolean }>`
   border: solid 1px ${BrandColor.GREEN_TEAL};
   color: white;
   border-radius: 20px;
-  margin: 20px 0 0;
-  padding: 8px 144px 8px 145px;
+  width: 100%;
+  margin: 10px 0 0;
+  padding: 8px;
   text-transform: uppercase;
 
   ${(props) =>

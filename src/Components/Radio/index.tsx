@@ -6,11 +6,11 @@ export default function Radio(props: IRadioProps) {
       {props.elements.map((element, index) => (
         <RadioGroup>
           <RadioStyled
+            onChange={(event) => props.handleOnChanges(event.target.value)}
             type="radio"
             id={String(index)}
             value={element}
             name={props.name}
-            key={index}
           />
           <RadioLabel htmlFor={element}>{element}</RadioLabel>
         </RadioGroup>
@@ -22,4 +22,5 @@ export default function Radio(props: IRadioProps) {
 interface IRadioProps {
   elements: string[];
   name: string;
+  handleOnChanges: Function;
 }

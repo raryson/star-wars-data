@@ -34,12 +34,12 @@ const RadioStyled = styled.input`
 const RadioContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
 `;
 
 const RadioLabel = styled.label`
   cursor: auto;
   vertical-align: middle;
+  margin-right: 30px;
 `;
 
 const RadioGroup = styled.div`
