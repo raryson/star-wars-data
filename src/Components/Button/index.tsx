@@ -3,7 +3,9 @@ import { ButtonStyled } from './styled';
 export default function Button(props: IButtonProps) {
   return (
     <div>
-      <ButtonStyled $disabled={props.disabled}>{props.children}</ButtonStyled>
+      <ButtonStyled disabled={props.disabled} $disabled={props.disabled}>
+        {props.children}
+      </ButtonStyled>
     </div>
   );
 }

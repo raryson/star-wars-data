@@ -4,5 +4,6 @@ export enum BrandColor {
   AZURE = '#0094ff',
   PINKISH_GREY = '#c4c4c4',
   GAINSBORO = '#dadada',
-  GRAY22 = '#383838'
+  GRAY22 = '#383838',
+  BLACK = '#000'
 }
