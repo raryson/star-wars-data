@@ -79,7 +79,20 @@ export interface IInfoRequest {
   next: number;
   previous: number;
   results: IInfoResult[];
-  type: string;
+  type?: string;
+}
+
+export interface IInfoRequestMovie {
+  count: number;
+  next: number;
+  previous: number;
+  results: IInfoRequestResultMovie[];
+  type?: string;
+}
+
+interface IInfoRequestResultMovie {
+  opening_crawl: string;
+  characteres: string[];
 }
 
 interface IInfoResult {

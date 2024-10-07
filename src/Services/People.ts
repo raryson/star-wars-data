@@ -1,13 +1,14 @@
+import { IInfoRequest } from '../Components/InfoSelect';
 import { httpClient } from '../Infra/httpClient';
 
 const getPeopleByName = async (name: string) => {
-  const response = (await httpClient.get(`people?search=${name}`)).data;
+  const response = (await httpClient.get(`people?search=${name}`)).data as IInfoRequest;
   return response;
 };
 
-const getPeopleById = async (id: string) => {
-  const response = (await httpClient.get(id)).data;
-  return response;
+const getPeopleByUrl = async (url: string) => {
+  const response = await fetch(url, { method: 'GET' });
+  return response.json();
 };
 
-export { getPeopleByName, getPeopleById };
+export { getPeopleByName, getPeopleByUrl };
