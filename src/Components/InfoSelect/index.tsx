@@ -9,6 +9,7 @@ import {
   StyledName,
   StyledTittle
 } from './styled';
+import { Link } from 'react-router-dom';
 
 export default function InfoSelect(props: IInfoSelectProps) {
   const handleRender = () => {
@@ -39,17 +40,28 @@ const generateNotFindMessage = () => (
 const generateInfoList = (infoList: IInfoRequest) => {
   return (
     <StyledItemList>
-      {infoList.results.map((infoData) => (
-        <div>
-          <div className="flex justify-between">
-            <StyledName>{infoList.type === 'Movies' ? infoData.title : infoData.name}</StyledName>
-            <StyledButtomDiv>
-              <Button>See Details</Button>
-            </StyledButtomDiv>
+      {infoList.results.map((infoData) => {
+        const name = infoList.type === 'Movies' ? infoData.title : infoData.name;
+        return (
+          <div>
+            <div className="flex justify-between">
+              <StyledName>{name}</StyledName>
+              <StyledButtomDiv>
+                <Link
+                  to={{
+                    pathname:
+                      infoList.type === 'Movies'
+                        ? `details/films/${name}`
+                        : `details/people/${name}`
+                  }}>
+                  <Button>See Details</Button>
+                </Link>
+              </StyledButtomDiv>
+            </div>
+            <StyledLine />
           </div>
-          <StyledLine />
-        </div>
-      ))}
+        );
+      })}
     </StyledItemList>
   );
 };

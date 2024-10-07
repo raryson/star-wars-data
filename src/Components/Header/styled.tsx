@@ -9,6 +9,7 @@ const StyledHeader = styled.div`
   box-shadow: 0 2px 0 0 ${BrandColor.GAINSBORO};
   background-color: ${BrandColor.WHITE};
   color: ${BrandColor.GREEN_TEAL};
+  text-align: center;
 `;
 
 export { StyledHeader };

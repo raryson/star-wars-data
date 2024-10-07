@@ -5,4 +5,9 @@ const getPeopleByName = async (name: string) => {
   return response;
 };
 
-export { getPeopleByName };
+const getPeopleById = async (id: string) => {
+  const response = (await httpClient.get(id)).data;
+  return response;
+};
+
+export { getPeopleByName, getPeopleById };

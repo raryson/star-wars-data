@@ -1,5 +1,5 @@
 import InfoSelect, { IInfoRequest } from '.';
-import { render, fireEvent, act } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 describe('InfoSelect', () => {
   it('should render a empty message when dont have itens to show', async () => {
