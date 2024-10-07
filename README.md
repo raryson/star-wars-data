@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Star Wars SPA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Context
+This application run with React and Typescript and use a lot of some libraries, like:
+- Styled Components
+- React Router
+- React Testing Library
 
-## Available Scripts
+This application don't have a global state like a reducer. Aim to be simple and not work with a complex store manipulation. This is can be a improvment for the future.
 
-In the project directory, you can run:
+## How run locally?
 
-### `npm start`
+### Docker
+You can run with docker. Just need to build and run the application.
+Here the commands to help:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Build**
+```
+docker build -t star-wars .
+```
+**Run**
+```
+docker run -p 3000:3000 star-wars
+```
+The app will be exposed on port 3000. To access you should access http://localhost:3000 after run.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Manually
+Also you can run application manually. Just need to run `npm install` and `npm run dev`. This will start the development env.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### About unit tests
+This application use the React Testing Library, that guarante that we can create tests focused in how the component is showed for the user.
+To run the tests locally just run:
+```
+npm run tests
+```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Code Formatter
+This project have configured the Eslint with the Typescript config. Also have a Prettier config to enhance the formater.
+Some helpfull commands that can help to fix you project is `npm run lint` and `npm run format`. `lint` to see if something have break the pattern and `format` to fix using prettier config.
