@@ -1,6 +1,6 @@
 import InfoSelect, { IInfoRequest } from '.';
 import { render } from '@testing-library/react';
-import { BrowserRouter, MemoryRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('InfoSelect', () => {
   it('should render a empty message when dont have itens to show', async () => {

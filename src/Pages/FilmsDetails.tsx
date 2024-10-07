@@ -26,13 +26,17 @@ export default function FilmsDetails() {
   useEffect(() => {
     getFilmsByName(name as string).then((value) => {
       setInfoRequest(value);
-      const requests = value.results[0].characters.map((character: string) =>
-        getPeopleByUrl(character)
-      );
-      Promise.all(requests).then((value) => {
-        setLoadingCharacter(false);
-        setCharacterResponse(value);
-      });
+      if (!value.results[0]) {
+        window.location.href = '/';
+      } else {
+        const requests = value.results[0].characters.map((character: string) =>
+          getPeopleByUrl(character)
+        );
+        Promise.all(requests).then((value) => {
+          setLoadingCharacter(false);
+          setCharacterResponse(value);
+        });
+      }
     });
   }, []);
 
@@ -48,6 +52,7 @@ export default function FilmsDetails() {
         {characterResponse.map((value: { name: string }, index: number) => {
           return (
             <Link
+              key={index}
               className="text-blue-600 dark:text-blue-500 hover:underline"
               to={`/details/people/${value.name}`}
             >
