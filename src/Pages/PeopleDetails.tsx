@@ -68,7 +68,7 @@ export default function PeopleDetails() {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto w-2/3">
       <div>
         <div>
           <Card>

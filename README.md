@@ -12,6 +12,11 @@ This application don't have a global state like a reducer. Aim to be simple and 
 
 ## How run locally?
 
+First, make a clone from this repo and enter in the cloned folder.
+```
+git clone https://github.com/raryson/star-wars-data.git
+```
+
 ### Docker
 
 You can run with docker. Just need to build and run the application.
@@ -41,7 +46,7 @@ This application use the React Testing Library, that guarante that we can create
 To run the tests locally just run:
 
 ```
-npm run tests
+npm run test
 ```
 
 ### Code Formatter

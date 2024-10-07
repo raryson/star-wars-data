@@ -9,7 +9,7 @@ const ButtonStyled = styled.button<{ $disabled?: boolean }>`
   font-sie: 14px;
   width: 100%;
   margin: 10px 0 0;
-  padding: 8px;
+  padding: 8px 20px 8px 20px;
   text-transform: uppercase;
 
   ${(props) =>

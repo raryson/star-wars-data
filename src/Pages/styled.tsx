@@ -21,6 +21,7 @@ const StyledH1 = styled.h1`
 `;
 const ButtonContainer = styled.div`
   margin-top: 30px;
+  width: 50%;
 `;
 
 export { StyledParaph, StyledTitle, StyledSpan, StyledH1, ButtonContainer };
