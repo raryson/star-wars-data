@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Card from '../Card';
 import { StyledLine } from '../DividerLine/styled';
 import Button from '../Button';
@@ -17,6 +18,7 @@ export default function InfoSelect(props: IInfoSelectProps) {
     if (props.infoRequestToShow.count <= 0) return generateNotFindMessage();
     if (props.infoRequestToShow.count > 0 && !props.isLoading)
       return generateInfoList(props.infoRequestToShow);
+    return generateNotFindMessage();
   };
   return (
     <div className="col-span-6 grid-cols-3 mr-8 w-full">
@@ -53,7 +55,8 @@ const generateInfoList = (infoList: IInfoRequest) => {
                       infoList.type === 'Movies'
                         ? `details/films/${name}`
                         : `details/people/${name}`
-                  }}>
+                  }}
+                >
                   <Button>See Details</Button>
                 </Link>
               </StyledButtomDiv>

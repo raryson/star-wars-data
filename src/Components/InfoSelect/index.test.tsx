@@ -1,11 +1,13 @@
 import InfoSelect, { IInfoRequest } from '.';
 import { render } from '@testing-library/react';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 
 describe('InfoSelect', () => {
   it('should render a empty message when dont have itens to show', async () => {
     const stubEmptyResponse = { count: 0 } as IInfoRequest;
     const renderizedPage = render(
-      <InfoSelect infoRequestToShow={stubEmptyResponse} isLoading={false} />
+      <InfoSelect infoRequestToShow={stubEmptyResponse} isLoading={false} />,
+      { wrapper: BrowserRouter }
     );
     expect(
       renderizedPage.getByText(/Use the form to search for People or Movies./)
@@ -18,7 +20,8 @@ describe('InfoSelect', () => {
       results: [{ name: 'Luke', url: 'someUrl' }]
     } as IInfoRequest;
     const renderizedPage = render(
-      <InfoSelect infoRequestToShow={stubEmptyResponse} isLoading={false} />
+      <InfoSelect infoRequestToShow={stubEmptyResponse} isLoading={false} />,
+      { wrapper: BrowserRouter }
     );
     expect(renderizedPage.getByText(/Luke/)).toBeInTheDocument();
     expect(renderizedPage.getByText(/See Details/)).toBeInTheDocument();
@@ -34,7 +37,8 @@ describe('InfoSelect', () => {
       ]
     } as IInfoRequest;
     const renderizedPage = render(
-      <InfoSelect infoRequestToShow={stubEmptyResponse} isLoading={false} />
+      <InfoSelect infoRequestToShow={stubEmptyResponse} isLoading={false} />,
+      { wrapper: BrowserRouter }
     );
     expect(renderizedPage.queryAllByText(/See Details/).length).toBe(2);
   });
