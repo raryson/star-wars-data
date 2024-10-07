@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
 import Card from '../Components/Card';
 import { StyledLine } from '../Components/DividerLine/styled';
 import { getPeopleByUrl } from '../Services/People';
 import { IInfoRequestMovie } from '../Components/InfoSelect';
 import { getFilmsByName } from '../Services/Films';
 import Button from '../Components/Button';
-import Skeleton from 'react-loading-skeleton';
 import { StyledH1, ButtonContainer, StyledParaph, StyledSpan, StyledTitle } from './styled';
 
 export default function FilmsDetails() {

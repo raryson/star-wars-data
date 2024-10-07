@@ -15,24 +15,18 @@ export default function Search(props: ISearchProps) {
 
   const searchButtonIsDisabled = search === '';
 
+  const handleIsLoading = (isLoading: boolean) => {
+    setIsLoading(isLoading);
+    props.setIsLoading(isLoading);
+  };
+
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    setIsLoading(true);
-    props.setIsLoading(true);
-    switch (searchingFor) {
-      case 'Movies':
-        const filmsResponse = await getFilmsByName(search);
-        const parsedDataFilm = { type: searchingFor, ...filmsResponse };
-        props.setRequestData(parsedDataFilm);
-        break;
-      case 'People':
-        const peopleResponse = await getPeopleByName(search);
-        const parsedDataPeople = { type: searchingFor, ...peopleResponse };
-        props.setRequestData(parsedDataPeople);
-        break;
-    }
-    setIsLoading(false);
-    props.setIsLoading(false);
+    handleIsLoading(true);
+    const apiResponse =
+      searchingFor === 'Movies' ? await getFilmsByName(search) : await getPeopleByName(search);
+    props.setRequestData({ type: searchingFor, ...apiResponse });
+    handleIsLoading(false);
   };
 
   const PeoplePlaceHolder = 'e.g Chewbacca, Yoda, Boba Fett';
