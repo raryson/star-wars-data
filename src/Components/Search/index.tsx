@@ -22,19 +22,17 @@ export default function Search(props: ISearchProps) {
     switch (searchingFor) {
       case 'Movies':
         const filmsResponse = await getFilmsByName(search);
-        const parsedDataFilm = { type: searchingFor, ...JSON.parse(filmsResponse) };
+        const parsedDataFilm = { type: searchingFor, ...filmsResponse };
         props.setRequestData(parsedDataFilm);
-        setIsLoading(false);
-        props.setIsLoading(false);
         break;
       case 'People':
         const peopleResponse = await getPeopleByName(search);
-        const parsedDataPeople = { type: searchingFor, ...JSON.parse(peopleResponse) };
+        const parsedDataPeople = { type: searchingFor, ...peopleResponse };
         props.setRequestData(parsedDataPeople);
-        setIsLoading(false);
-        props.setIsLoading(false);
         break;
     }
+    setIsLoading(false);
+    props.setIsLoading(false);
   };
 
   const PeoplePlaceHolder = 'e.g Chewbacca, Yoda, Boba Fett';
