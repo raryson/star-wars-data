@@ -42,10 +42,10 @@ const generateNotFindMessage = () => (
 const generateInfoList = (infoList: IInfoRequest) => {
   return (
     <StyledItemList>
-      {infoList.results.map((infoData) => {
+      {infoList.results.map((infoData, index) => {
         const name = infoList.type === 'Movies' ? infoData.title : infoData.name;
         return (
-          <div>
+          <div key={index}>
             <div className="flex justify-between">
               <StyledName>{name}</StyledName>
               <StyledButtomDiv>

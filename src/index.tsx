@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import PeopleDetails from './Pages/PeopleDetails';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Header from './Components/Header';
 import FilmsDetails from './Pages/FilmsDetails';
+import SearchPage from './Pages/Search';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />
+    element: <SearchPage />
   },
   {
     path: '/details/people/:name',

@@ -4,7 +4,7 @@ export default function Radio(props: IRadioProps) {
   return (
     <RadioContainer>
       {props.elements.map((element, index) => (
-        <RadioGroup>
+        <RadioGroup key={index}>
           <RadioStyled
             onChange={(event) => props.handleOnChanges(event.target.value)}
             type="radio"
