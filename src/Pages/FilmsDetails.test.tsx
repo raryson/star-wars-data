@@ -23,14 +23,10 @@ describe('FilmsDetails', () => {
   it('should render banana film with han solo', async () => {
     let renderPage: any;
     await act(async () => {
-      jest
-        .spyOn(serviceFilms, 'getFilmsByName')
-        .mockResolvedValue({
-          count: 1,
-          results: [
-            { title: 'Banana', opening_crawl: `A banana history`, characters: ['Han Solo'] }
-          ]
-        });
+      jest.spyOn(serviceFilms, 'getFilmsByName').mockResolvedValue({
+        count: 1,
+        results: [{ title: 'Banana', opening_crawl: `A banana history`, characters: ['Han Solo'] }]
+      });
       jest.spyOn(servicePeople, `getPeopleByUrl`).mockResolvedValue({ name: `Han Solo` });
       renderPage = render(<FilmsDetails />, { wrapper: BrowserRouter });
     });

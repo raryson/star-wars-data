@@ -23,12 +23,16 @@ export default function PeopleDetails() {
   const { name } = useParams();
   useEffect(() => {
     getPeopleByName(name as string).then((value) => {
-      setInfoRequest(value);
-      const requests = value.results[0].films.map((film) => getFilmsByUrl(film));
-      Promise.all(requests).then((value) => {
-        setFilmsresponses(value);
-        setIsLoadingFilms(false);
-      });
+      if (value.results[0]) {
+        setInfoRequest(value);
+        const requests = value.results[0].films.map((film) => getFilmsByUrl(film));
+        Promise.all(requests).then((value) => {
+          setFilmsresponses(value);
+          setIsLoadingFilms(false);
+        });
+      } else {
+        window.location.href = '/';
+      }
     });
   }, []);
 
